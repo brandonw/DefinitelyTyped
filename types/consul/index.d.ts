@@ -16,6 +16,7 @@ declare namespace Consul {
     interface CommonOptions {
         consistent?: boolean | undefined;
         dc?: string | undefined;
+        filter?: string | undefined;
         stale?: boolean | undefined;
         token?: string | undefined;
         wait?: string | undefined;
@@ -949,7 +950,7 @@ declare namespace Consul {
     }
 
     namespace Watch {
-        
+
         interface WatchOptions {
             key?: string | undefined;
         }
@@ -1004,6 +1005,11 @@ declare namespace Consul {
         kv: Kv;
         session: Session;
         status: Status;
+
+        /**
+         * Destroy internal http agent
+         */
+        destroy(): void;
 
         /**
          * Lock helper.

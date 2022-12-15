@@ -796,3 +796,9 @@ consul = new Consul();
 
     watch.end();
 }
+
+
+// Consul.destroy
+{
+    consul.destroy();
+}
